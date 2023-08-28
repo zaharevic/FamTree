@@ -9,6 +9,6 @@ public class SetDeathDate extends EditMenuComand{
     }
     @Override
     public void execute(long id) {
-
+        consoleUI.setDeathDate(id);
     }
 }

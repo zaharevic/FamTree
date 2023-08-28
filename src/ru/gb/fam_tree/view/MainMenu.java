@@ -13,6 +13,8 @@ public class MainMenu {
         commandList.add(new AddHuman(consoleUI));
         commandList.add(new EditHuman(consoleUI));
         commandList.add(new GetHumansInfo(consoleUI));
+        commandList.add(new LoadFromFile(consoleUI));
+        commandList.add(new SaveToFile(consoleUI));
         commandList.add(new SortByName(consoleUI));
         commandList.add(new SortByAge(consoleUI));
         commandList.add(new Finish(consoleUI));

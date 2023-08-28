@@ -1,5 +1,6 @@
 package ru.gb.fam_tree.view;
 
+import ru.gb.fam_tree.model.family_tree.FamilyTree;
 import ru.gb.fam_tree.model.family_tree.all_tree_items.human.Gender;
 import ru.gb.fam_tree.model.family_tree.all_tree_items.human.Human;
 import ru.gb.fam_tree.presenter.Presenter;
@@ -25,7 +26,6 @@ public class ConsoleUI implements View {
         presenter = new Presenter(this);
         work = true;
         menu = new MainMenu(this);
-        editMenu = new EditMenu(this);
     }
 
 

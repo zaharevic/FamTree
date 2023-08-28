@@ -52,31 +52,6 @@ public class FamilyTree<T extends FamilyTreeItem<T>> implements Serializable,Ite
         }
     }
 
-    public List<T> getSiblings(long id){
-        T t = getById(id);
-        if(t == null){
-            return null;
-        }
-        List<T> res = new ArrayList<>();
-        for(T parent: t.getParents())
-            for (T child : parent.getChildrens()) {
-                if (!child.equals(t)) {
-                    res.add(child);
-                }
-            }
-        return res;
-    }
-
-    public List<T> getByName(String name){
-        List<T> res = new ArrayList<>();
-        for(T t: objectList){
-            if(t.getName().equalsIgnoreCase(name)){
-                res.add(t);
-            }
-        }
-        return res;
-    }
-
     public boolean setWedding(T t1, T t2){
         if(t1.getSpouse() == null && t2.getSpouse() == null){
             t1.setSpouse(t2);
@@ -97,13 +72,6 @@ public class FamilyTree<T extends FamilyTreeItem<T>> implements Serializable,Ite
         return false;
     }
 
-    public boolean remove(long tId){
-        if(checkId(tId)){
-            T e = getById(tId);
-            return objectList.remove(e);
-        }
-        return false;
-    }
 
     public boolean checkId(long id){
         if(id >= objectId || id < 0){

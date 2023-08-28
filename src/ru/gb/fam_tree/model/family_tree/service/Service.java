@@ -23,15 +23,6 @@ public class Service {
         Human human = new Human(name, gender, birthdate);
         return famTree.add(human);
     }
-
-    public List<Human> getSiblibngs(long id){
-        return famTree.getSiblings(id);
-    }
-
-    public List<Human> getByName(String name){
-        return famTree.getByName(name);
-    }
-
     public boolean setWedding(Human human1, Human human2){
         return famTree.setWedding(human1, human2);
     }
@@ -57,10 +48,6 @@ public class Service {
         }
     }
 
-    public boolean remove(long id){
-        return famTree.remove(id);
-    }
-
     public boolean checkId(long id){
         return famTree.checkId(id);
     }
@@ -82,7 +69,7 @@ public class Service {
     }
 
     public void LoadFormFile(String path){
-        fileHandler.read(path);
+        famTree = (FamilyTree<Human>) fileHandler.read(path);
     }
 
     public void SaveToFile(String path){
@@ -125,11 +112,6 @@ public class Service {
     public void setName(long id, String newName){
         Human human = getById(id);
         human.setName(newName);
-    }
-
-    public void getName(long id){
-        Human human = getById(id);
-        human.getName();
     }
 
     public long getLastId(){
